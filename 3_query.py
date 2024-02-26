@@ -30,7 +30,7 @@ index = VectorStoreIndex.from_vector_store(store)
 
 # query your data!
 # here we have customized the number of documents returned per query to 20, because tweets are really short
-query_engine = index.as_query_engine(similarity_top_k=20)
-response = query_engine.query("What does the author think of web frameworks?")
+query_engine = index.as_query_engine(similarity_top_k=3)
+response = query_engine.query("Can you give me the details of the items associated with email id - cauho@witwuta.sv bought?")
 print(response)
 

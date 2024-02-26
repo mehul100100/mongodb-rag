@@ -28,7 +28,8 @@ reader = SimpleMongoReader(uri=os.getenv("MONGODB_URI"))
 documents = reader.load_data(
     os.getenv("MONGODB_DATABASE"),
     os.getenv("MONGODB_COLLECTION"), # this is the collection where the objects you loaded in 1_import got stored
-    field_names=["full_text"], # these is a list of the top-level fields in your objects that will be indexed
+    # field_names=["saleDate", "items", "storeLocation", "customer", "couponUsed", "purchaseMethod"], # these is a list of the top-level fields in your objects that will be indexed
+    field_names=["text"],
                                # make sure your objects have a field called "full_text" or that you change this value
     query_dict=query_dict # this is a mongo query dict that will filter your data if you don't want to index everything
 )
